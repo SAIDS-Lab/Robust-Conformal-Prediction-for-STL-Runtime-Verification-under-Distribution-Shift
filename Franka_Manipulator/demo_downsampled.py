@@ -54,16 +54,33 @@ def f(t):
 
 
 def g(epsilon, beta, search_step=0.0007):
-    return max(0, beta - epsilon / 2)
+    # Check input.
+    if beta < 0 or beta > 1:
+        raise Exception("Input to the function g is out of range.")
+
+    # Perform a sampling-based line search.
+    z = 0
+    while z <= 1:
+        value = beta * f(z / beta) + (1 - beta) * f((1 - z) / (1 - beta))
+        if value <= epsilon:
+            return z
+        z += search_step
+
+    raise Exception("No return from function g.")
 
 
-def g_inverse(epsilon, tau):
+def g_inverse(epsilon, tau, search_step=0.0007):
+    # Check input.
+    if tau < 0 or tau > 1:
+        raise Exception("Input to the function g_inverse is out of range.")
+
     beta = 1
     while beta >= 0:
-        if max(0, beta - epsilon / 2) <= 1 - tau:
-            break
-        beta -= 0.0000001
-    return beta
+        if beta != 1 and g(epsilon, beta) <= tau:
+            return beta
+        beta -= search_step
+
+    raise Exception("No return from function g_inverse.")
 
 
 def calculate_delta_n(delta, n, epsilon):
