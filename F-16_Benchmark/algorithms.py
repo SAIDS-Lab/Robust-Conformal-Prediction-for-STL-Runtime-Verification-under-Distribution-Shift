@@ -1,5 +1,5 @@
 """
-In this file, we provide the algoritms associated with robust runtime verification and vanilla runtime
+In this file, we provide the algorithms associated with robust runtime verification and vanilla runtime
 verification (from ICCPS 2023).
 """
 import numpy as np

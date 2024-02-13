@@ -50,7 +50,7 @@ class Plane:
             new_traj.append(new_point)
         return new_traj
 
-    def simulate_disturbed(self, shifted_distance = 0, shifted_direction = 0, disturbed_sd = 4):
+    def simulate_disturbed(self, shifted_distance = 0, shifted_direction = 0, disturbed_sd = 3.5):
         new_traj = []
         for point in self.nominal_traj:
             if shifted_direction: #up
