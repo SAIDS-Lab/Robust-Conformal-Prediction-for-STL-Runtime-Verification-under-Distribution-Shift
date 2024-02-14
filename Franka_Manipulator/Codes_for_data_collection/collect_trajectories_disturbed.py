@@ -19,7 +19,7 @@ import os
 import json
 
 # Declare global variables for the property of the system.
-start_position = [0.52, 0.52, 0]
+start_position = [0.51, 0.51, 0]
 position_std = 0.1
 end_position = [-0.5, -0.5, 0]
 
@@ -31,11 +31,11 @@ def compute_norm(x):
 def save_trajectories(trajectories):
     # Change directories: Please set this to your own directory if you are using my codes.
     print(os.getcwd())
-    os.chdir("C:/Users/nickz/Documents/Research/stl_runtime_verification_under_distribution_shift/Isaac_Sim_Case_Study/Data")
+    os.chdir("C:/Users/nickz/Documents/Research/Robust-Conformal-Prediction-for-STL-Runtime-Verification-under-Distribution-Shift/Franka_Manipulator/Data")
     # Now, save the json.
     # Add system property discriptions:
     trajectories["properties"] = {"start": start_position, "end": end_position, "start_position_std": position_std}
-    with open("disturbed_10.json", "w") as outfile:
+    with open("disturbed_1.json", "w") as outfile:
         json.dump(trajectories, outfile)
 
 

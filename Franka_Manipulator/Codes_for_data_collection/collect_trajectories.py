@@ -31,7 +31,7 @@ def compute_norm(x):
 def save_trajectories(trajectories):
     # Change directories: Please set this to your own directory if you are using my codes.
     print(os.getcwd())
-    os.chdir("C:/Users/nickz/Documents/Research/stl_runtime_verification_under_distribution_shift/Isaac_Sim_Case_Study/Data")
+    os.chdir("C:/Users/nickz/Documents/Research/Robust-Conformal-Prediction-for-STL-Runtime-Verification-under-Distribution-Shift/Franka_Manipulator/Data")
     # Now, save the json.
     # Add system property discriptions:
     trajectories["properties"] = {"start": start_position, "end": end_position, "start_position_std": position_std}

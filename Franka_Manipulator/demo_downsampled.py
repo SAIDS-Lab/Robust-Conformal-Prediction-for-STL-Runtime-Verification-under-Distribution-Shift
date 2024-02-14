@@ -923,7 +923,7 @@ def main():
     num_coverage_samples = 20
     delta = 0.2
     epsilon_1 = 0.2
-    epsilon_2 = 0.45
+    epsilon_2 = 0.6
     epsilon_3 = 0.9
     goal_position = [-0.5, -0.5, 0]
     human_position = [0.6, -0.6, 0]
