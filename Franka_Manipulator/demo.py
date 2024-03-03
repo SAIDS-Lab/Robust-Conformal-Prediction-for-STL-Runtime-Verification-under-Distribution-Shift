@@ -702,7 +702,7 @@ def main():
     observed_range = [0, 400]
     predicted_range = [401, 916]
     set_coverage_percentage = 0.9
-    num_coverage_samples = 20
+    num_coverage_samples = 50
     delta = 0.2
     epsilon_1 = 0.2
     epsilon_2 = 0.6
@@ -710,7 +710,7 @@ def main():
     goal_position = [-0.5, -0.5, 0]
     human_position = [0.6, -0.6, 0]
     calib_size = 1500
-    test_size = 100
+    test_size = 200
 
     # Load data.
     print("Start: Loading data")
@@ -975,14 +975,8 @@ def main():
 
     print("Start: Plotting coverages.")
     # Draw the coverage plot.
-    used_bins = []
-    percentile_value = 0
-    while percentile_value <= 1.02:
-        used_bins.append(percentile_value)
-        percentile_value += 0.005
-
-    plt.hist(direct_vanilla, bins=np.arange(min(np.concatenate((direct_vanilla, direct_robust))) - 0.1, max(np.concatenate((direct_vanilla, direct_robust))) + 0.01, 0.01), label="Direct Runtime Verification Method")
-    plt.hist(direct_robust, bins=np.arange(min(np.concatenate((direct_vanilla, direct_robust))) - 0.1, max(np.concatenate((direct_vanilla, direct_robust))) + 0.01, 0.01), label="Robust Direct Runtime Verification Method")
+    plt.hist(direct_vanilla, bins=np.arange(min(np.concatenate((direct_vanilla, direct_robust))) - 0.1, max(np.concatenate((direct_vanilla, direct_robust))) + 0.005, 0.005), label="Direct Runtime Verification Method")
+    plt.hist(direct_robust, bins=np.arange(min(np.concatenate((direct_vanilla, direct_robust))) - 0.1, max(np.concatenate((direct_vanilla, direct_robust))) + 0.005, 0.005), label="Robust Direct Runtime Verification Method")
     plt.xlabel("Coverage")
     plt.ylabel("Occurrence")
     plt.legend()

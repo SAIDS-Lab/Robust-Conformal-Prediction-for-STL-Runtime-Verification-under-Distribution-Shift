@@ -920,7 +920,7 @@ def main():
     observed_range = [0, 11]
     predicted_range = [12, 24]
     set_coverage_percentage = 0.9
-    num_coverage_samples = 20
+    num_coverage_samples = 50
     delta = 0.2
     epsilon_1 = 0.2
     epsilon_2 = 0.6
@@ -928,7 +928,7 @@ def main():
     goal_position = [-0.5, -0.5, 0]
     human_position = [0.6, -0.6, 0]
     calib_size = 1500
-    test_size = 100
+    test_size = 200
 
     # Load data.
     print("Start: Loading data")
